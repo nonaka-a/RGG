@@ -1,0 +1,1898 @@
+{
+  "activeCompId": "comp_1",
+  "assets": [
+    {
+      "type": "comp",
+      "name": "END",
+      "id": "comp_1",
+      "width": 1000,
+      "height": 600,
+      "duration": 61,
+      "fps": 30,
+      "layers": [
+        {
+          "id": "layer_audio_1775480592855",
+          "type": "audio",
+          "name": "BGM3.mp3",
+          "assetId": "audio_17754805902690.6129125720244158",
+          "startTime": 0.5,
+          "inPoint": 0.5,
+          "outPoint": 61.166666666666664,
+          "expanded": true,
+          "trackIdx": 0,
+          "tracks": {
+            "volume": {
+              "label": "Volume (dB)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 58.06666666666666,
+                  "value": 0,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 60.9,
+                  "value": -60,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": -60,
+              "max": 12,
+              "step": 0.1,
+              "initialValue": 0
+            }
+          }
+        },
+        {
+          "id": "layer_solid_1775478480152",
+          "type": "solid",
+          "name": "Square",
+          "shape": "rect",
+          "color": "#ffffff",
+          "blendMode": "source-over",
+          "parent": null,
+          "expanded": false,
+          "inPoint": 56.699999999999996,
+          "outPoint": 61.666666666666664,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 56.766666666666666,
+                  "value": 0,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 57.96666666666667,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            }
+          }
+        },
+        {
+          "id": "layer_1775479333819_865",
+          "type": "solid",
+          "name": "Square コピー",
+          "shape": "rect",
+          "color": "#ffffff",
+          "blendMode": "source-over",
+          "parent": null,
+          "expanded": false,
+          "inPoint": 0,
+          "outPoint": 1.9666666666666666,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 1.0666666666666667,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 2,
+                  "value": 0,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            }
+          }
+        },
+        {
+          "id": "layer_1775478719429_312",
+          "type": "text",
+          "name": "Text Layer コピー",
+          "blendMode": "source-over",
+          "text": "咲耶： イイナ、追ってこないわね…",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 2.966666666666667,
+          "outPoint": 7.3999999999999995,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 2.966666666666667,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 3.3,
+                  "value": 25.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 3.6999999999999997,
+                  "value": 47.733333333333334,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 4.1,
+                  "value": 47.733333333333334,
+                  "interpolation": "Linear",
+                  "easeIn": false,
+                  "easeOut": false
+                },
+                {
+                  "time": 5,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775478741603_320",
+          "type": "text",
+          "name": "Text Layer コピー",
+          "blendMode": "source-over",
+          "text": "ミタマ： なんかスマホを落としたみたいたま",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 7.433333333333334,
+          "outPoint": 11.466666666666667,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 7.433333333333334,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 7.766666666666667,
+                  "value": 23.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 9.1,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775479041248_779",
+          "type": "text",
+          "name": "Text Layer コピー コピー",
+          "blendMode": "source-over",
+          "text": "咲耶： そっか…",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 12.166666666666666,
+          "outPoint": 15.033333333333333,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 12.166666666666666,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 12.5,
+                  "value": 42.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 13.366666666666667,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775478462056_884",
+          "name": "end_00000.jpg",
+          "source": "../images/Sprite/end/end_00000.jpg",
+          "imgObj": {},
+          "blendMode": "source-over",
+          "parent": null,
+          "expanded": false,
+          "inPoint": 0,
+          "outPoint": 15.633333333333333,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 0,
+                  "value": {
+                    "x": 461,
+                    "y": 300
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 7.366666666666666,
+                  "value": {
+                    "x": 500,
+                    "y": 300
+                  },
+                  "easeIn": true,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            }
+          }
+        },
+        {
+          "id": "layer_1775479059359_259",
+          "type": "text",
+          "name": "Text Layer コピー コピー",
+          "blendMode": "source-over",
+          "text": "咲耶： この大活躍はリスペクトする気になったでしょ！",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 16.03333333333333,
+          "outPoint": 19.933333333333334,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 16.03333333333333,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 16.366666666666667,
+                  "value": 13.333333333333329,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 17.966666666666665,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775479117480_429",
+          "type": "text",
+          "name": "Text Layer コピー コピー",
+          "blendMode": "source-over",
+          "text": "咲耶：さすが 主人公よね！",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 20.233333333333334,
+          "outPoint": 23.7,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 19.9,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 20.233333333333334,
+                  "value": 25.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 21.333333333333332,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775478508597_78",
+          "name": "end_00001.jpg",
+          "source": "../images/Sprite/end/end_00001.jpg",
+          "imgObj": {},
+          "blendMode": "source-over",
+          "parent": null,
+          "expanded": false,
+          "inPoint": 15.633333333333333,
+          "outPoint": 23.7,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 17.266666666666666,
+                  "value": {
+                    "x": 495.3934740882917,
+                    "y": 290.7869481765835
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            }
+          }
+        },
+        {
+          "id": "layer_1775479156358_202",
+          "type": "text",
+          "name": "Text Layer コピー コピー",
+          "blendMode": "source-over",
+          "text": "ミタマ： …咲耶",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 25.866666666666667,
+          "outPoint": 28.433333333333334,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 25.866666666666667,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 26.2,
+                  "value": 50.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 26.53333333333333,
+                  "value": 77.64999999999998,
+                  "interpolation": "Linear",
+                  "easeIn": false,
+                  "easeOut": false
+                },
+                {
+                  "time": 26.933333333333334,
+                  "value": 77.64999999999998,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 27.3,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775478810546_152",
+          "type": "text",
+          "name": "Text Layer コピー",
+          "blendMode": "source-over",
+          "text": "咲耶： ん？なに？",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 28.733333333333334,
+          "outPoint": 32.166666666666664,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 28.733333333333334,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 28.733333333333334,
+                  "value": 41.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 29.566666666666666,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775478510241_227",
+          "name": "end_00002.jpg",
+          "source": "../images/Sprite/end/end_00002.jpg",
+          "imgObj": {},
+          "blendMode": "source-over",
+          "parent": null,
+          "expanded": true,
+          "inPoint": 23.7,
+          "outPoint": 32.166666666666664,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 23.733333333333334,
+                  "value": {
+                    "x": 500,
+                    "y": 300
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 32.166666666666664,
+                  "value": {
+                    "x": 524,
+                    "y": 300
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            }
+          }
+        },
+        {
+          "id": "layer_1775479236084_458",
+          "type": "text",
+          "name": "Text Layer コピー コピー コピー コピー",
+          "blendMode": "source-over",
+          "text": "ミタマ： …守ってくれて　ありがとうたま",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 32.56666666666666,
+          "outPoint": 37.06666666666666,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 32.56666666666666,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 32.9,
+                  "value": 23.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 33.666666666666664,
+                  "value": 67.41666666666666,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 33.9,
+                  "value": 67.41666666666666,
+                  "interpolation": "Linear",
+                  "easeIn": false,
+                  "easeOut": false
+                },
+                {
+                  "time": 34.46666666666667,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775479194364_27",
+          "type": "text",
+          "name": "Text Layer コピー コピー コピー",
+          "blendMode": "source-over",
+          "text": "咲耶： どういたしまして！",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 37.1,
+          "outPoint": 40.36666666666667,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 37.1,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 37.43333333333333,
+                  "value": 33.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 38.4,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775478511298_219",
+          "name": "end_00003.jpg",
+          "source": "../images/Sprite/end/end_00003.jpg",
+          "imgObj": {},
+          "blendMode": "source-over",
+          "parent": null,
+          "expanded": false,
+          "inPoint": 32.166666666666664,
+          "outPoint": 41.4,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [
+                {
+                  "time": 32.2,
+                  "value": {
+                    "x": 100,
+                    "y": 100
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 41.4,
+                  "value": {
+                    "x": 104,
+                    "y": 104
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            }
+          }
+        },
+        {
+          "id": "layer_1775479300281_134",
+          "type": "text",
+          "name": "Text Layer コピー コピー コピー コピー コピー コピー",
+          "blendMode": "source-over",
+          "text": "ミタマ： リスペクト、してるたま　咲耶のこと",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 43.13333333333333,
+          "outPoint": 47.96666666666667,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 43.13333333333333,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 43.46666666666667,
+                  "value": 20.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 44,
+                  "value": 52.20000000000025,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 44.2,
+                  "value": 52.20000000000025,
+                  "interpolation": "Linear",
+                  "easeIn": false,
+                  "easeOut": false
+                },
+                {
+                  "time": 44.733333333333334,
+                  "value": 76.10000000000028,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 45.333333333333336,
+                  "value": 76.10000000000028,
+                  "interpolation": "Linear",
+                  "easeIn": false,
+                  "easeOut": false
+                },
+                {
+                  "time": 45.833333333333336,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775479316033_650",
+          "type": "text",
+          "name": "Text Layer コピー コピー コピー コピー コピー コピー",
+          "blendMode": "source-over",
+          "text": "咲耶： ふふふ　ありがと",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 48.7,
+          "outPoint": 52.333333333333336,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 48.7,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 49.03333333333333,
+                  "value": 33.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 49.46666666666667,
+                  "value": 64.28571428571415,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 49.766666666666666,
+                  "value": 64.28571428571415,
+                  "interpolation": "Linear",
+                  "easeIn": false,
+                  "easeOut": false
+                },
+                {
+                  "time": 50.43333333333333,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775479264469_454",
+          "type": "text",
+          "name": "Text Layer コピー コピー コピー コピー コピー",
+          "blendMode": "source-over",
+          "text": "咲耶： さあ、油日神社が見えてきたわよ！",
+          "fontSize": 30,
+          "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+          "color": "#ffffff",
+          "strokeColor": "#611a1a",
+          "strokeWidth": 0,
+          "shadowOpacity": 100,
+          "parent": null,
+          "expanded": false,
+          "inPoint": 52.6,
+          "outPoint": 59.699999999999996,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [
+                {
+                  "time": 52.6,
+                  "value": {
+                    "x": 500,
+                    "y": 520
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "typewriter": {
+              "label": "Typewriter (%)",
+              "type": "number",
+              "keys": [
+                {
+                  "time": 52.93333333333333,
+                  "value": 18.33333333333333,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 53.166666666666664,
+                  "value": 36.7741935483872,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 53.666666666666664,
+                  "value": 36.7741935483872,
+                  "interpolation": "Linear",
+                  "easeIn": false,
+                  "easeOut": false
+                },
+                {
+                  "time": 54.3,
+                  "value": 100,
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            },
+            "letterSpacing": {
+              "label": "Tracking (px)",
+              "type": "number",
+              "keys": [],
+              "step": 1,
+              "initialValue": 0
+            }
+          },
+          "locked": false
+        },
+        {
+          "id": "layer_1775478512540_176",
+          "name": "end_00004.jpg",
+          "source": "../images/Sprite/end/end_00004.jpg",
+          "imgObj": {},
+          "blendMode": "source-over",
+          "parent": null,
+          "expanded": false,
+          "inPoint": 41.4,
+          "outPoint": 71.8,
+          "tracks": {
+            "position": {
+              "label": "Position",
+              "type": "vector2",
+              "keys": [],
+              "step": 1,
+              "initialValue": {
+                "x": 500,
+                "y": 300
+              }
+            },
+            "scale": {
+              "label": "Scale",
+              "type": "vector2",
+              "linked": true,
+              "keys": [
+                {
+                  "time": 41.36666666666667,
+                  "value": {
+                    "x": 108,
+                    "y": 108
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                },
+                {
+                  "time": 58.199999999999996,
+                  "value": {
+                    "x": 92,
+                    "y": 92
+                  },
+                  "easeIn": false,
+                  "easeOut": false,
+                  "interpolation": "Linear"
+                }
+              ],
+              "step": 1,
+              "initialValue": {
+                "x": 100,
+                "y": 100
+              }
+            },
+            "rotation": {
+              "label": "Rotation",
+              "type": "rotation",
+              "keys": [],
+              "min": -3600,
+              "max": 3600,
+              "step": 1,
+              "initialValue": 0
+            },
+            "opacity": {
+              "label": "Opacity",
+              "type": "number",
+              "keys": [],
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "initialValue": 100
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "end_00000.jpg",
+      "id": "img_17754784492010.48523529604675464",
+      "src": "../images/Sprite/end/end_00000.jpg",
+      "imgObj": {}
+    },
+    {
+      "type": "image",
+      "name": "end_00001.jpg",
+      "id": "img_17754784492010.7288077407054454",
+      "src": "../images/Sprite/end/end_00001.jpg",
+      "imgObj": {}
+    },
+    {
+      "type": "image",
+      "name": "end_00002.jpg",
+      "id": "img_17754784492020.5527226697369616",
+      "src": "../images/Sprite/end/end_00002.jpg",
+      "imgObj": {}
+    },
+    {
+      "type": "image",
+      "name": "end_00003.jpg",
+      "id": "img_17754784492020.5339133093265684",
+      "src": "../images/Sprite/end/end_00003.jpg",
+      "imgObj": {}
+    },
+    {
+      "type": "image",
+      "name": "end_00004.jpg",
+      "id": "img_17754784492020.03619159277056461",
+      "src": "../images/Sprite/end/end_00004.jpg",
+      "imgObj": {}
+    },
+    {
+      "type": "audio",
+      "name": "BGM3.mp3",
+      "id": "audio_17754805902690.6129125720244158",
+      "src": "sound/BGM3.mp3",
+      "audioBuffer": {},
+      "duration": 73.76977324263038,
+      "waveform": {}
+    }
+  ]
+}

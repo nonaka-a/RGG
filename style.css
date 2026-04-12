@@ -1,0 +1,527 @@
+body {
+            margin: 0; padding: 0; overflow: hidden;
+            background-color: #111;
+            font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+            touch-action: none; user-select: none; -webkit-user-select: none;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh;
+        }
+        #main-wrapper {
+            position: relative;
+            width: 1000px; height: 600px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #0f0524, #2c1b54, #4a3b75);
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            transform-origin: center center;
+        }
+        canvas { display: block; }
+
+        /* UI Layer */
+        #ui-layer {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .hud {
+    position: absolute; top: 55px; left: 20px;
+    display: flex; flex-direction: column; gap: 8px;
+    z-index: 100; /* 明示的に指定 */
+}
+#progress-container {
+    /* ... */
+    z-index: 100;
+}
+#title-screen {
+    /* ... */
+    z-index: 2000;
+}
+        .hp-row { display: flex; align-items: center; gap: 12px; }
+        .hp-label { font-family: 'Sawarabi Mincho', serif; font-size: 18px; font-weight: 900; color: #fff; width: 80px; text-shadow: 2px 2px 4px #000; }
+        .circles { display: flex; gap: 5px; }
+        .circle {
+            width: 14px; height: 14px; border-radius: 50%;
+            background: rgba(0,0,0,0.5); transition: all 0.3s;
+        }
+        .circle.active { background: #ff1493; box-shadow: 0 0 10px #ff1493, inset 0 0 5px #fff; }
+        .circle.mitama.active { background: #00ffcc; box-shadow: 0 0 10px #00ffcc, inset 0 0 5px #fff; }
+        .circle.flash { background: #fff !important; box-shadow: 0 0 20px #fff, inset 0 0 10px #fff !important; transition: none !important; }
+
+        #progress-container {
+            position: absolute; top: 15px; left: 2%;
+            width: 96%; height: 26px;
+            background: #2a2a2a;
+            border: 3px solid #8c6e5e;
+            box-shadow: inset 0 0 0 2px #111, 0 4px 10px rgba(0,0,0,0.5);
+            padding: 3px; border-radius: 0;
+            box-sizing: border-box;
+            display: flex; align-items: center;
+        }
+        #progress-bar-track {
+            width: 100%; height: 100%;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        #progress-bar {
+            width: 0%; height: 100%;
+            background: linear-gradient(to right, #9fe65e, #cff466);
+            border-radius: 10px;
+            transition: width 0.1s;
+        }
+        #progress-halfway-marker, #progress-goal-marker {
+            position: absolute; top: 50%;
+            transform: translate(-50%, -50%);
+            width: 14px; height: 14px;
+            background: rgba(140, 140, 140, 0.7);
+            border: 2px solid #444;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0,0,0,0.8);
+            z-index: 10;
+            transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+        #progress-halfway-marker { left: 50%; }
+        #progress-goal-marker { left: 95%; }
+        
+        #progress-halfway-marker.reached, #progress-goal-marker.reached {
+            background: #ff1493;
+            border-color: #fff;
+            box-shadow: 0 0 15px #ff1493, inset 0 0 5px #fff;
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+        .corner { position: absolute; width: 8px; height: 8px; background: #8c6e5e; border: 1px solid #1a1a1a; z-index: 2; }
+        .tp-l { top: -6px; left: -6px; }
+        .tp-r { top: -6px; right: -6px; }
+        .bt-l { bottom: -6px; left: -6px; }
+        .bt-r { bottom: -6px; right: -6px; }
+        
+        /* 忍術ゲージ */
+        #ninjutsu-container {
+            position: absolute; top: 52px; right: 2%;
+            width: 200px; height: 20px;
+            background: #2a2a2a;
+            border: 3px solid #8c6e5e;
+            box-shadow: inset 0 0 0 2px #111, 0 4px 10px rgba(0,0,0,0.5);
+            padding: 2px; border-radius: 0;
+            box-sizing: border-box;
+            display: flex; align-items: center;
+        }
+        #ninjutsu-bar-track {
+            width: 100%; height: 100%;
+            background: #000;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        #ninjutsu-bar {
+            width: 0%; height: 100%;
+            background: linear-gradient(to right, #ffeb3b, #fbc02d);
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+        #ninjutsu-bar.full {
+            box-shadow: 0 0 10px #ffeb3b, 0 0 20px #fbc02d;
+            animation: ninjutsu-glow 0.8s infinite alternate;
+        }
+        @keyframes ninjutsu-glow {
+            from { filter: brightness(1) saturate(1); box-shadow: 0 0 5px #ffeb3b; }
+            to { filter: brightness(2.5) saturate(0.5); box-shadow: 0 0 25px #fff, 0 0 40px #ffeb3b; }
+        }
+        #ninjutsu-label {
+            position: absolute; left: -35px; top: -3px;
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 16px; font-weight: 900; color: #ffeb3b;
+            text-shadow: 2px 2px 4px #000;
+        }
+        #debug-skip-btn, #debug-skip-btn-3 {
+            position: absolute; right: 2%;
+            width: 30px; height: 30px;
+            background: rgba(0,0,0,0.5); border: 1px solid #8c6e5e;
+            color: #8c6e5e; font-size: 14px;
+            display: flex; justify-content: center; align-items: center;
+            pointer-events: auto; cursor: pointer;
+            transition: all 0.2s;
+        }
+        #debug-skip-btn { top: 76px; }
+        #debug-skip-btn-3 { top: 110px; }
+
+        #debug-skip-btn:active, #debug-skip-btn-3:active {
+            background: #8c6e5e; color: #fff;
+        }
+
+        /* カスタムモーダル（ウィンドウ） */
+        #modal-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 20000 !important;
+            pointer-events: auto;
+        }
+        #modal-window {
+            position: relative; width: 450px; padding: 50px;
+            background: radial-gradient(circle, #4a4a4a 0%, #222 100%);
+            border: 4px solid #8c6e5e;
+            box-shadow: inset 0 0 0 3px #111, 0 20px 60px rgba(0,0,0,0.9);
+            text-align: center; animation: modalIn 0.4s ease-out;
+        }
+        #modal-window::before {
+            content: ''; position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid rgba(140, 110, 94, 0.4);
+            pointer-events: none;
+        }
+        @keyframes modalIn {
+            from { transform: scale(0.8) translateY(-20px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        #modal-text {
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 44px; font-weight: 900; color: #fff; margin-bottom: 35px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 15px rgba(255,100,100,0.2);
+            letter-spacing: 4px;
+        }
+        .modal-btn-wrap {
+            display: inline-block;
+            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.8));
+            -webkit-filter: drop-shadow(0 4px 4px rgba(0,0,0,0.8));
+            transition: all 0.2s;
+            pointer-events: auto; /* クリックを確実に通す */
+        }
+        .modal-btn {
+            font-family: 'Sawarabi Mincho', serif;
+            width: 250px; height: 64px; padding: 3px; 
+            background: #8c6e5e; border: none; cursor: pointer;
+            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+            display: inline-flex; justify-content: center; align-items: center;
+            pointer-events: auto;
+        }
+        .modal-btn-wrap:hover { filter: drop-shadow(0 6px 6px rgba(0,0,0,0.9)); transform: scale(1.05); }
+        .modal-btn-wrap:active { transform: scale(0.95); }
+        .modal-btn-inner {
+            width: 100%; height: 100%;
+            background: linear-gradient(to bottom, #ffebad, #f7d478);
+            clip-path: inherit;
+            display: flex; justify-content: center; align-items: center;
+            color: #4a2a1a; font-size: 24px; font-weight: 900;
+            letter-spacing: 8px; text-indent: 8px; /* 最後の文字の後ろにも余白があるように調整 */
+        }
+
+        .modal-corner { position: absolute; width: 12px; height: 12px; background: #8c6e5e; border: 2px solid #111; z-index: 2; }
+        .m-tp-l { top: -8px; left: -8px; }
+        .m-tp-r { top: -8px; right: -8px; }
+        .m-bt-l { bottom: -8px; left: -8px; }
+        .m-bt-r { bottom: -8px; right: -8px; }
+        
+        /* Settings Modal specific */
+       #settings-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; 
+    z-index: 21000 !important; /* スロットの10000より確実に上に表示させる */
+    pointer-events: auto;
+}
+        #settings-window {
+            position: relative; width: 350px; padding: 40px;
+            background: radial-gradient(circle, #4a4a4a 0%, #222 100%);
+            border: 4px solid #8c6e5e;
+            box-shadow: inset 0 0 0 3px #111, 0 20px 60px rgba(0,0,0,0.9);
+            text-align: center; animation: modalIn 0.3s ease-out;
+        }
+        #settings-title {
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 32px; font-weight: 900; color: #fff; margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            letter-spacing: 4px;
+        }
+
+        /* シックな立体ボタンデザイン */
+        #control-panel {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 280px;
+            pointer-events: none; display: flex; justify-content: space-between; align-items: flex-end;
+            padding: 30px 20px; box-sizing: border-box;
+        }
+        .v-btn {
+            width: 85px; height: 85px;
+            background: linear-gradient(145deg, #3a3a3a, #222);
+            border: 2px solid #444; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #ccc; font-weight: 900; font-size: 24px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.6), 
+                        inset 2px 2px 5px rgba(255,255,255,0.1);
+            pointer-events: auto;
+            opacity: 0.9;
+        }
+        .v-btn.active {
+            transform: scale(0.92) translateY(2px);
+            background: #111;
+            box-shadow: none;
+            color: #fff;
+            opacity: 1;
+        }
+        .v-btn.disabled {
+            filter: grayscale(1) brightness(0.6);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .v-btn.shinobi-ready {
+            border-color: #ff0;
+            color: #ff0;
+            opacity: 1;
+            filter: none;
+            pointer-events: auto;
+        }
+        .v-btn.shinobi-flash {
+            animation: btn-flash-anim 0.6s ease-out;
+        }
+        @keyframes btn-flash-anim {
+            0% { filter: brightness(1); border-color: #ff0; color: #ff0; transform: scale(1); }
+            30% { filter: brightness(3); border-color: #fff; color: #fff; transform: scale(1.2); box-shadow: 0 0 30px #fff; }
+            100% { filter: brightness(1); border-color: #ff0; color: #ff0; transform: scale(1); }
+        }
+
+        /* 十字キー */
+        .dir-pad { position: relative; width: 280px; height: 160px; margin-left: 20px; }
+        .dir-btn { position: absolute; }
+        #btn-left  { left: 0; bottom: 60px; }
+        #btn-right { left: 190px; bottom: 60px; }
+        #btn-down  { left: 95px; bottom: 0; }
+        #btn-up    { left: 95px; bottom: 120px; }
+        
+        /* アクションボタン（画像に基づいた十字配置） */
+        .action-pad { position: relative; width: 300px; height: 220px; margin-right: 20px; }
+        .action-btn { position: absolute; }
+        #btn-jump   { left: 0px; bottom: 60px; border-color: #383; color: #5a5; }   /* A: Left */
+        #btn-attack { left: 95px; bottom: 120px; border-color: #338; color: #55a; } /* B: Top */
+        #btn-mode   { left: 95px; bottom: 0px; border-color: #833; color: #a55; font-family: 'Sawarabi Mincho', serif; font-size: 36px; }   /* C: Bottom */
+        #btn-sub    { left: 190px; bottom: 60px; border-color: #883; color: #ff0; font-family: 'Sawarabi Mincho', serif; font-size: 36px; }  /* D: Right */
+        
+        /* 設定ボタンの個別調整 - サイズを半分程度に縮小 */
+        .v-btn.settings-btn {
+            width: 45px; height: 45px;
+            font-size: 22px;
+            margin-bottom: 75px;
+            z-index: 10;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.6), 
+                        inset 1px 1px 3px rgba(255,255,255,0.1);
+        }
+        .v-btn.settings-btn:active {
+            transform: scale(0.92) translateY(4px) rotate(30deg);
+        }
+
+        .v-btn.active#btn-jump   { color: #6f6; box-shadow: none; }
+        .v-btn.active#btn-attack { color: #6af; box-shadow: none; }
+        .v-btn.active#btn-mode   { color: #f66; box-shadow: none; }
+        .v-btn.active#btn-sub    { color: #ff0; box-shadow: none; }
+
+        /* タイトル画面用 */
+        #title-screen {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; display: flex; justify-content: center; align-items: center; z-index: 2000;
+            pointer-events: auto;
+            overflow: hidden;
+        }
+        #title-bg-layer {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+        }
+        .t-bg-base {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('images/BG/BG1.jpg') center/cover no-repeat;
+        }
+        .t-bg-light {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 350px;
+            background: url('images/Sprite/light.png') left bottom/auto 100% repeat-x;
+            opacity: 0.6;
+        }
+        .t-bg-street {
+            position: absolute; bottom: 140px; left: 150px; width: 100%; height: 480px;
+            background: url('images/BG/Streetlight_front.png') left bottom/auto 100% no-repeat;
+        }
+        .t-bg-rail {
+            position: absolute; bottom: 110px; left: 0; width: 100%; height: 110px;
+            /* background-sizeを120%以上にすることで画像を引き伸ばし、間隔を調整 */
+            background: url('images/BG/Guardrail.png') left bottom/650px 100% repeat-x;
+        }
+        .t-bg-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+      #title-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: -20px; /* 正の値から負の値に変更し、ウィンドウだけを上に引き寄せる */
+            z-index: 2001;
+            margin-top: 20px; /* コンテナ全体の位置を元の高さに戻す */
+        }
+      #title-logo {
+    width: 820px; /* 650pxから820pxに拡大 */
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.9));
+    position: relative;
+    top: -10px; /* 10px上に移動 */
+    z-index: 2002;
+    margin-bottom: 25px; /* ロゴとウィンドウの間の余白を10px拡大 */
+}
+        #title-window {
+            position: relative; 
+            width: 320px;
+            padding: 25px 20px;
+            background: radial-gradient(circle, #4a4a4a 0%, #222 100%);
+            border: 4px solid #8c6e5e;
+            box-shadow: inset 0 0 0 3px #111, 0 30px 80px rgba(0,0,0,1);
+            text-align: center;
+            z-index: 2001;
+        }
+        #title-text {
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 38px; font-weight: 900; color: #fff; margin-bottom: 50px;
+            text-shadow: 4px 4px 10px rgba(0,0,0,0.9), 0 0 20px rgba(255,200,100,0.3);
+            line-height: 1.4; letter-spacing: 2px;
+        }
+        #skip-op-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 18px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            z-index: 5000;
+            transition: background 0.2s, color 0.2s;
+            user-select: none;
+            display: none;
+            pointer-events: auto; /* これを追加 */
+        }
+        #skip-op-btn:active {
+            background: #fff;
+            color: #000;
+        }
+
+        /* ボスHPゲージのデザイン（進捗ゲージ・忍術ゲージと統一） */
+#boss-hp-container {
+    position: absolute; top: 85px; left: 50%;
+    transform: translateX(-50%);
+    width: 450px; height: 26px;
+    background: #2a2a2a;
+    border: 3px solid #8c6e5e;
+    box-shadow: inset 0 0 0 2px #111, 0 4px 10px rgba(0,0,0,0.5);
+    padding: 3px; border-radius: 0;
+    box-sizing: border-box;
+    display: none; align-items: center;
+    z-index: 100;
+}
+#boss-hp-track {
+    width: 100%; height: 100%;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+#boss-hp-bar {
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom, #ff3333, #990000);
+    border-radius: 10px;
+    transition: width 0.2s;
+}
+#boss-hp-label {
+    position: absolute; bottom: -25px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 16px; font-weight: 900; color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    letter-spacing: 4px;
+}
+
+/* 必殺技カットイン：全てのDOM UIより上に表示 */
+#cutin-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 10000; 
+    pointer-events: none;
+    overflow: hidden;
+    background: black; /* 暗転用の黒背景 */
+    opacity: 0;
+    transition: opacity 0.05s; /* 素早い演出用 */
+}
+#cutin-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* ロード画面 */
+        #loading-screen {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; z-index: 9000;
+            transition: opacity 0.5s;
+        }
+        #loading-canvas {
+            width: 180px; height: 180px;
+        }
+        #loading-text {
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 24px; color: #fff; margin-top: 20px;
+            letter-spacing: 4px;
+        }
+
+/* Credits Button */
+#info-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(42, 42, 42, 0.8);
+    border: 2px solid #8c6e5e;
+    color: #ffebad;
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2500;
+    pointer-events: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.2s;
+}
+#info-btn:hover {
+    background: #4a4a4a;
+    transform: scale(1.1);
+}
+#info-btn:active {
+    transform: scale(0.9);
+}
+
+/* Credits Window */
+#credits-window {
+    position: relative; width: 520px; max-height: 85%; padding: 40px;
+    background: radial-gradient(circle, #333 0%, #111 100%);
+    border: 3px solid #8c6e5e;
+    box-shadow: inset 0 0 0 3px #111, 0 30px 80px rgba(0,0,0,1);
+    text-align: center; overflow-y: auto; overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    animation: modalIn 0.4s ease-out;
+}
+.credits-header {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 24px; color: #ffebad; margin-bottom: 25px;
+    text-shadow: 2px 2px 4px #000;
+}
+.credits-section { margin-bottom: 20px; }
+.credits-category {
+    font-size: 14px; color: #888; letter-spacing: 2px; margin-bottom: 5px;
+}
+.credits-name {
+    font-size: 18px; color: #fff; line-height: 1.6;
+}
+.credits-footer {
+    margin-top: 30px; font-size: 14px; color: #ffebad; opacity: 0.8;
+}
